@@ -1,0 +1,58 @@
+def addition(num):
+    sum=0
+    for i in range(len(num)):
+        sum+=num[i]
+    print("Addition of entered numbers are: ",sum)
+def mul(num):
+    mul=1
+    for i in range(len(num)):
+        mul=mul*num[i]
+    print("Multiplication of entered numbers is ",mul)
+
+ 
+
+try:
+    i22=int(input("Enter which operation you wanted to perform:\n1.Addition\t2.substraction\t3.multiplication\t4.Division\t5.Modulo Division\n\n"))
+    if(i22>5):
+        raise InputError("Please enter value below 6!")
+
+ 
+
+    match i22:
+        case 1: 
+            i23=int(input("For how many values you want to perfrom the above operation: "))
+            lis=[]
+            val=1
+            for i in range(0,i23):
+               b=int(input(f"enter the {val} value: "))
+               lis.append(b)
+               val+=1
+            addition(lis)
+        case 2:
+            print("Please enter 2 values\n")
+            i24=int(input("enter first value: "))
+            i25=int(input("enter second value: "))
+            print("substraction of entered numbers are: ",i24-i25)
+        case 3:
+            i23=int(input("For how many values you want to perfrom the above operation: "))
+            lis=[]
+            val=1
+            for i in range(0,i23):
+               b=int(input(f"enter the {val} value: "))
+               lis.append(b)
+               val+=1
+            mul(lis)
+        case 4:
+            i24=int(input("enter first value: "))
+            i25=int(input("enter second value: "))
+            print("Division of entered numbers are: ",i24/i25)
+        case 5:
+            i24=int(input("enter first value: "))
+            i25=int(input("enter second value: "))
+            print("Modulo Division of entered numbers are: ",i24%i25)
+except TypeError:
+    print("Please enter a number and not string")
+# except IndexOutofboundexception:
+#     print("please enter your number within 1 and 6")
+finally:
+    print("Thank you for using the calculator")
